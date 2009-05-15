@@ -5,6 +5,7 @@ use warnings;
 
 use LWP::UserAgent;
 
+use 5.008;
 our $VERSION = '0.01';
 
 use Moose;
@@ -146,7 +147,7 @@ Cache::Ehcache is
 
 =head1 AUTHOR
 
-YAMAMOTO Ryuzo E<lt>yamamoto@nulab.co.jpE<gt>
+YAMAMOTO Ryuzo (dragon3) E<lt>ryuzo.yamamoto@gmail.comE<gt>, E<lt>yamamoto@nulab.co.jpE<gt>
 
 =head1 LICENSE
 

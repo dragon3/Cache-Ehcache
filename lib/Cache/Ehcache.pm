@@ -3,11 +3,10 @@ package Cache::Ehcache;
 use strict;
 use warnings;
 
-use LWP::UserAgent;
-
 use 5.008;
 our $VERSION = '0.02';
 
+use LWP::UserAgent;
 use Moose;
 
 has 'server' => (
@@ -134,6 +133,7 @@ Cache::Ehcache - client library for Ehcache Server
 
   # get cache element
   my $value = $cache->get('key_1');
+  # URL is 'http://localhost:8080/ehcache/rest/mynamespace/key_1'
 
   # delete cache element
   $cache->delete('key_2');
@@ -143,21 +143,26 @@ Cache::Ehcache - client library for Ehcache Server
 
 =head1 DESCRIPTION
 
-Cache::Ehcache is
+Cache::Ehcache is client library for Ehcache Server.
+Ehcache is a widely used java distributed cache for general purpose caching.
+Ehcache Server is caching server like memcached, and has RESTful resource oriented API.
+
+See: http://ehcache.sourceforge.net/documentation/cache_server.html
 
 =head1 AUTHOR
 
-YAMAMOTO Ryuzo (dragon3) E<lt>ryuzo.yamamoto@gmail.comE<gt>, E<lt>yamamoto@nulab.co.jpE<gt>
+YAMAMOTO Ryuzo (dragon3) E<lt>ryuzo.yamamoto@gmail.comE<gt>
 
 =head1 LICENSE
 
-This library is free software; you can redistribute it and/or
-        modify it under the same terms as Perl itself .
+This library is free software; you can redistribute it and/or modify it under the same terms as Perl itself .
 
 =head1 SEE ALSO
 
 Ehcache Site
-  http://ehcache.sourceforge.net/index.html
+  http://ehcache.sourceforge.net/index.html,
+
+Ehcache Server
   http://ehcache.sourceforge.net/documentation/cache_server.html
 
 =cut

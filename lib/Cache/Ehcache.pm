@@ -6,7 +6,7 @@ use warnings;
 use LWP::UserAgent;
 
 use 5.008;
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 use Moose;
 

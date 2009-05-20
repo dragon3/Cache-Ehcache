@@ -24,7 +24,6 @@ META.yml
 README
 t/00_compile.t
 t/01_new.t
-t/02_keys.t
 t/02_make_url.t
 t/03_keys.t
 xt/97_podspell.t

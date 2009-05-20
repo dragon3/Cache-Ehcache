@@ -4,7 +4,7 @@ use strict;
 use warnings;
 
 use 5.008;
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 use LWP::UserAgent;
 use Moose;

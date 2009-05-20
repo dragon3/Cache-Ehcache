@@ -1,5 +1,8 @@
 Revision history for Perl extension Cache::Ehcache
 
+0.03  Thu May 21 00:09:59 2009
+        - fix when cahce uninitialized
+        
 0.02  Mon May 18 11:12:32 2009
         - fix dependencies
 

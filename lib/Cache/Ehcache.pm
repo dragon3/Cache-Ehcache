@@ -53,6 +53,12 @@ sub BUILDARGS {
     return {%args};
 }
 
+sub BUILD {
+    my $self = shift;
+    my $req  = HTTP::Request->new( 'PUT', $self->_make_url() );
+    my $res  = $self->ua->request($req);
+}
+
 __PACKAGE__->meta->make_immutable;
 no Moose;
 
@@ -69,7 +75,7 @@ sub set {
       HTTP::Request->new( 'PUT', $self->_make_url($key), \@header, $value );
     my $res = $self->ua->request($req);
     unless ( $res->is_success ) {
-        warn $res->status_line;
+        warn $res->status_line . "\n";
     }
 }
 
@@ -81,7 +87,7 @@ sub get {
         return $res->decoded_content;
     }
     elsif ( $res->code != HTTP_NOT_FOUND ) {
-        warn $res->status_line;
+        warn $res->status_line . "\n";
     }
 }
 
@@ -91,7 +97,7 @@ sub delete {
     my $req   = HTTP::Request->new( 'DELETE', $self->_make_url($key) );
     my $res   = $self->ua->request($req);
     if ( !$res->is_success && $res->code != HTTP_NOT_FOUND ) {
-        warn $res->status_line;
+        warn $res->status_line . "\n";
     }
 }
 
@@ -100,7 +106,7 @@ sub clear {
     my $req  = HTTP::Request->new( 'DELETE', $self->_make_url('*') );
     my $res  = $self->ua->request($req);
     unless ( $res->is_success ) {
-        warn $res->status_line;
+        warn $res->status_line . "\n";
     }
 }
 

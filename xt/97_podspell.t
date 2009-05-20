@@ -8,3 +8,7 @@ Ryuzo
 Yamamoto
 YAMAMOTO
 Ehcache
+API
+RESTful
+java
+memcached
